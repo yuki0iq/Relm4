@@ -12,7 +12,7 @@
 //! component, which forwards the reload command back to the caller of the
 //! component, which then issues to reload the widgets again.
 
-use futures::FutureExt;
+use futures_util::FutureExt;
 use gtk::prelude::*;
 use relm4::*;
 

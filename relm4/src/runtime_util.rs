@@ -1,7 +1,7 @@
 use std::task::Poll;
 
 use flume::r#async::RecvStream;
-use futures::{future::FusedFuture, pin_mut, Future, Stream};
+use futures_util::{future::FusedFuture, pin_mut, Future, Stream};
 use once_cell::sync::Lazy;
 use std::sync::Mutex;
 use tokio::sync::mpsc;

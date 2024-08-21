@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT or Apache-2.0
 
 use super::ShutdownReceiver;
-use futures::future::Either;
+use futures_util::future::Either;
 use std::future::Future;
 
 /// A future attached to a shutdown receiver.
@@ -35,10 +35,10 @@ where
         let Self { receiver, future } = self;
 
         let cancel = receiver.wait();
-        futures::pin_mut!(cancel);
-        futures::pin_mut!(future);
+        futures_util::pin_mut!(cancel);
+        futures_util::pin_mut!(future);
 
-        match futures::future::select(cancel, future).await {
+        match futures_util::future::select(cancel, future).await {
             Either::Left(_) => Either::Left(()),
             Either::Right((out, _)) => Either::Right(out),
         }

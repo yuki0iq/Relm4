@@ -90,7 +90,7 @@ impl<C: AsyncComponent> AsyncConnector<C> {
         }
     }
 
-    /// Convert his type into a [`Stream`](futures::Stream) that yields output events
+    /// Convert his type into a [`Stream`](futures_util::Stream) that yields output events
     /// as futures.
     pub fn into_stream(self) -> AsyncComponentStream<C> {
         let Self {

@@ -1,6 +1,6 @@
 use std::mem::ManuallyDrop;
 
-use futures::Future;
+use futures_util::Future;
 use gtk::glib;
 
 use crate::{shutdown::ShutdownSender, Sender};

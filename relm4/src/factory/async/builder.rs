@@ -165,7 +165,7 @@ impl<C: AsyncFactoryComponent> FutureData<C> {
                 let mut cmd = GuardedReceiver::new(cmd_receiver);
                 let mut input = GuardedReceiver::new(input_receiver);
                 loop {
-                    futures::select!(
+                    futures_util::select!(
                         // Performs the model update, checking if the update requested a command.
                         // Runs that command asynchronously in the background using tokio.
                         message = input => {

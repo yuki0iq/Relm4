@@ -3,7 +3,7 @@ use std::pin::Pin;
 use std::task::{Context, Poll};
 
 use flume::r#async::RecvStream;
-use futures::{pin_mut, Stream, StreamExt};
+use futures_util::{pin_mut, Stream, StreamExt};
 
 use crate::component::AsyncComponent;
 use crate::runtime_util::ShutdownOnDrop;
@@ -13,7 +13,7 @@ use crate::runtime_util::ShutdownOnDrop;
 ///
 /// Use this as alternative to [`AsyncController`](crate::component::AsyncController) when
 /// you prefer a stream of futures or want to unlock the potential of
-/// [`StreamExt`](futures::StreamExt).
+/// [`StreamExt`](futures_util::StreamExt).
 /// Also, this type implements [`Send`] so using it in commands is
 /// possible.
 pub struct AsyncComponentStream<C: AsyncComponent> {
